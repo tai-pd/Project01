@@ -56,4 +56,6 @@ Route::group(['prefix'=>'myGroup'], function(){
 
 Route::get('goiController1', 'myController@m_controller1');
 
+Route::get('goiController2/{round}', 'myController@m_controler2');
+
 

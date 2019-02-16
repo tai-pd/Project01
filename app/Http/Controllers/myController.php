@@ -10,4 +10,10 @@ class myController extends Controller
     {
     	echo 'xin chao';
     }
+
+    public function m_controler2($controller)
+    {
+    	echo 'xin chao 2 :' .$controller;
+    	return redirect()->route('my_Route1', $controller);
+    }
 }
