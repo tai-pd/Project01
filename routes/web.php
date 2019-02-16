@@ -54,8 +54,21 @@ Route::group(['prefix'=>'myGroup'], function(){
 	});
 });
 
+//Controller
+
 Route::get('goiController1', 'myController@m_controller1');
 
 Route::get('goiController2/{round}', 'myController@m_controler2');
+
+//URL
+
+Route::get('getMyURL', 'myController@getURL'); 
+
+// form
+Route::get('getForm', function(){
+	return view('MyForm');
+});
+
+Route::post('postForm', ['as'=>'postForm', 'uses'=>'myController@postForm']);
 
 
