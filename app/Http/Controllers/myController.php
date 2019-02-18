@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Http\Redirect;
+use Illuminate\Http\Response;
 
 class myController extends Controller
 {
@@ -44,7 +47,27 @@ class myController extends Controller
 
     // form
     public function postForm(Request $request)
+    {    	
+    	/*if(is_null($request->input('MatKhau'))){
+    		echo $request->HoTen;
+    		echo $request->input('MatKhau');
+    	}   		
+    	else */
+    	redirect::to('https://dbaddiction.fandom.com/wiki/Dragon_Blaze_Wikia');
+    }
+
+    // Cookie
+    public function setCookies()
     {
-    	echo 'postFormmmm';
+    	$Response = new Response();
+    	$Response->withCookie('myCookieeee', 'pham duc tai', '0.5');
+    	echo 'set Response';
+    	return $Response;
+    }
+
+    public function getCookies(Request $request)
+    {
+    	echo 'my Response : ';
+    	return $request->cookie('myCookieeee');
     }
 }
