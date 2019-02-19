@@ -82,3 +82,5 @@ Route::get('uploadFile', function(){
 	return view('postFile');
 });
 
+Route::post('postFileUpload', 'myController@uploadFile')->name('updaloadMyFile');
+

@@ -48,12 +48,11 @@ class myController extends Controller
     // form
     public function postForm(Request $request)
     {    	
-    	/*if(is_null($request->input('MatKhau'))){
+    	if(is_null($request->input('MatKhau'))){
     		echo $request->HoTen;
     		echo $request->input('MatKhau');
     	}   		
-    	else */
-    	redirect::to('https://dbaddiction.fandom.com/wiki/Dragon_Blaze_Wikia');
+    	else redirect::to('https://dbaddiction.fandom.com/wiki/Dragon_Blaze_Wikia');
     }
 
     // Cookie
@@ -69,5 +68,24 @@ class myController extends Controller
     {
     	echo 'my Response : ';
     	return $request->cookie('myCookieeee');
+    }
+
+    // upload file
+
+    public function uploadFile(Request $request)
+    {
+    	if($request->hasFile('myFile'))
+    	{
+    		$file = $request->file('myFile');
+    		// kiem tra dinh dang file upload
+    		if($file->getClientOriginalExtension()=='jpg' || $file->getClientOriginalExtension()=='png')
+    		{
+    			$fileName = $file->getClientOriginalName('MyFile');
+    			$file->move('img', $fileName);
+    			echo '<br>da luu file';
+    		}
+    		else echo '<br>file ko phu hop';
+    	}
+    	else echo '<br>ko co file';
     }
 }
