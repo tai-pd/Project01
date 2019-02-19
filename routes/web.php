@@ -84,3 +84,14 @@ Route::get('uploadFile', function(){
 
 Route::post('postFileUpload', 'myController@uploadFile')->name('updaloadMyFile');
 
+// json
+
+Route::get('getJson', 'myController@getJson')->name('getMyJson');
+
+// truyen du lieu tren view 
+Route::get('myView', 'myController@myView')->name('getMyView');
+
+Route::get('setTime/{t}', 'myController@Time')->name('setMyTime');
+
+View::share('myViable', 'Hello this is variable shared');
+

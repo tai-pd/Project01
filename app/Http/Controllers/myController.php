@@ -88,4 +88,24 @@ class myController extends Controller
     	}
     	else echo '<br>ko co file';
     }
+
+    // json
+
+    public function getJson()
+    {
+    	$array = ['khoahoc'=>['laguage'=>['laravel','php'],'experience'=>['research','ReadnUnderstand_source']]];
+    	return response()->json($array);
+    }
+
+    // view
+
+    public function myView()
+    {
+    	return view('myView');
+    }
+
+    public function Time($time)
+    {
+    	return view('myView', ['myTime'=>$time]);
+    }
 }
