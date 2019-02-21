@@ -95,3 +95,10 @@ Route::get('setTime/{t}', 'myController@Time')->name('setMyTime');
 
 View::share('myViable', 'Hello this is variable shared');
 
+// blade template 
+
+Route::get('blade', function(){
+	return view('pages.page1');
+});
+
+Route::get('BaldeTemplete/{template}', 'myController@blade');

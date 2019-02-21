@@ -108,4 +108,18 @@ class myController extends Controller
     {
     	return view('myView', ['myTime'=>$time]);
     }
+
+    // blade
+    public function blade($tmp)
+    {
+    	if($tmp == 'laravel')
+    	{
+    		return view('pages.page1');
+    	}
+    	elseif($tmp == 'php')
+    	{
+    		return view('pages.page2');
+    	}
+
+    }
 }
